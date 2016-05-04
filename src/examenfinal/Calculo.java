@@ -17,6 +17,7 @@ public class Calculo extends javax.swing.JFrame {
      */
     public Calculo() {
         initComponents();
+        this.jTextField1.setText("21");
     }
 
     /**
@@ -62,6 +63,11 @@ public class Calculo extends javax.swing.JFrame {
         });
 
         jButton3.setText("CONVIERTE A BINARIO");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("REGRESO A CERO");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +122,7 @@ public class Calculo extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        String numero = jTextField1.getText();
-       Double numero2 = new Double(numero);
+       Integer numero2 = Integer.parseInt(numero);
        numero2++;
        //jTextField1.setText(Integer.toString(""+ numero2));
        this.jTextField1.setText(""+numero2) ;
@@ -124,11 +130,18 @@ public class Calculo extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        String numero = jTextField1.getText();
-       Double numero2 = new Double(numero);
+       String numero = jTextField1.getText();
+       Integer numero2 = Integer.parseInt(numero);
        numero2--;
        this.jTextField1.setText(""+numero2) ;
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        String numero = jTextField1.getText();
+        Integer numero2 = Integer.parseInt(numero);
+        this.jTextField1.setText(""+Integer.toBinaryString(numero2)) ;
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
